@@ -1,4 +1,4 @@
-import { withSentryConfig } from '@sentry/nextjs';
+// import { withSentryConfig } from '@sentry/nextjs';
 
 /** @type {import('next').NextConfig} */
 
@@ -17,38 +17,7 @@ const nextConfig = {
   },
 };
 
-export default withSentryConfig(
-  withSentryConfig(nextConfig, {
-    // For all available options, see:
-    // https://github.com/getsentry/sentry-webpack-plugin#options
-
-    org: 'portfolio-ix',
-    project: 'javascript-nextjs',
-    silent: !process.env.CI, // Only print logs for uploading source maps in CI
-    widenClientFileUpload: true, // Upload a larger set of source maps for prettier stack traces
-    reactComponentAnnotation: {
-      enabled: true, // Automatically annotate React components
-    },
-    // Uncomment to enable request routing to circumvent ad-blockers
-    // tunnelRoute: "/monitoring",
-    hideSourceMaps: true, // Hides source maps from client bundles
-    disableLogger: true, // Automatically tree-shake Sentry logger statements
-    automaticVercelMonitors: true, // Enables instrumentation of Vercel Cron Monitors
-  }),
-  {
-    org: 'portfolio-ix',
-    project: 'javascript-nextjs',
-    silent: !process.env.CI,
-    widenClientFileUpload: true,
-    reactComponentAnnotation: {
-      enabled: true,
-    },
-    tunnelRoute: '/monitoring',
-    hideSourceMaps: true,
-    disableLogger: true,
-    automaticVercelMonitors: true,
-  }
-);
+export default nextConfig;
 
 // import { withSentryConfig } from '@sentry/nextjs';
 // import type { NextConfig } from 'next';

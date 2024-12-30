@@ -17,9 +17,9 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "Vivek's Portfolio",
   description: 'Modern portfolio',
-  // icons: {
-  //   icon: '/favicon.ico', // Relative path to your favicon
-  // },
+  icons: {
+    icon: '/favicon.ico', // Relative path to your favicon
+  },
 };
 
 export default function RootLayout({
